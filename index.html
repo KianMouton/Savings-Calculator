@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Savings Calculator</h1>
+    </header>
+    <main>
+        <div id="inputs">
+            <label for="monthly/yearly">monthly or annually</label>
+            <div id="monthly/yearly">
+                <input id="monthly" type="button" value="monthly">
+                <input id="annually" type="button" value="annually">
+            </div>
+            <label for="amount">Starting Amount</label>
+            <input type="number" name="amount" id="amount">
+            <label id="x-amount" for="annual-amount">Annual Amount</label>
+            <input type="number" name="annual-amount" id="annual-amount">
+            <label for="rate">Interest Rate</label>
+            <input type="number" name="rate" id="rate">
+            <label id="year-label" for="years">Years</label>
+            <input type="number" name="years" id="years">
+            <button id="calculate">Calculate</button>
+        </div>
+        <div id="results">
+            <h2>Results</h2>
+            <p id="result-amount"></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
