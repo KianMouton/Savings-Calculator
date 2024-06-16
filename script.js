@@ -30,19 +30,11 @@ button.addEventListener("click", () => {
     if (yearly === false && monthly === false) {
         yearly = true;
     }
-    if (rate === 1) {
-        console.log("vark");
-    }
-    else if (startingAmount === "" || annualAmount === "" || rate === "" || years === "" ) {
+    else if (startingAmount.value === "" || annualAmount.value === "" || rate.value === "" || years.value === "" ) {
         alert("Please fill in all fields");
         return;
-    } else if (yearly === true) {
-        const result = annualAmount.value * rate.value * years.value + parseFloat(startingAmount.value);
-    resultAmount.innerText = "R " + result;
-    console.log(result);
-    } else if (monthly === true) {
-        const result = annualAmount.value * rate.value * years.value + parseFloat(startingAmount.value);
-        resultAmount.innerText = "R " + result;
-        console.log(result);
+    } else {
+        const result = annualAmount.value * (rate.value / 100) * years.value + parseFloat(startingAmount.value);
+        resultAmount.innerText = `Total: R ${result}`;             
     }
 });
