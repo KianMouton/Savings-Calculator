@@ -8,24 +8,26 @@
 </head>
 <body>
     <header>
-        <h1>Savings Calculator</h1>
+        <h1 id="main-header">Simple Savings Calculator</h1>
     </header>
     <main>
-        <div id="inputs">
-            <label for="monthly/yearly">monthly or annually</label>
-            <div id="monthly/yearly">
-                <input id="monthly" type="button" value="monthly">
-                <input id="annually" type="button" value="annually">
+        <div class="container">
+            <div id="inputs">
+                <label for="monthly/yearly">monthly or annually</label>
+                <div id="monthly/yearly">
+                    <input class="button" id="monthly" type="button" value="monthly">
+                    <input class="button" id="annually" type="button" value="annually">
+                </div>
+                <label for="amount">Starting Amount</label>
+                <input type="number" name="amount" id="amount">
+                <label id="x-amount" for="annual-amount">Annual Amount</label>
+                <input type="number" name="annual-amount" id="annual-amount">
+                <label for="rate">Interest Rate</label>
+                <input type="number" name="rate" id="rate">
+                <label id="year-label" for="years">Years</label>
+                <input type="number" name="years" id="years">
+                <button class="button" id="calculate">Calculate</button>
             </div>
-            <label for="amount">Starting Amount</label>
-            <input type="number" name="amount" id="amount">
-            <label id="x-amount" for="annual-amount">Annual Amount</label>
-            <input type="number" name="annual-amount" id="annual-amount">
-            <label for="rate">Interest Rate</label>
-            <input type="number" name="rate" id="rate">
-            <label id="year-label" for="years">Years</label>
-            <input type="number" name="years" id="years">
-            <button id="calculate">Calculate</button>
         </div>
         <div id="results">
             <h2>Results</h2>
