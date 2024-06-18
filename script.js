@@ -9,7 +9,6 @@ const annuallyBtn = document.getElementById("annually");
 const resultAmount = document.getElementById("result-amount");
 const amountLabel = document.getElementById("x-amount");
 const yearlLabel = document.getElementById("year-label");
-const compoundBtn = document.getElementById("compound");
 
 let monthly = false;
 let yearly = false;
@@ -29,7 +28,6 @@ annuallyBtn.addEventListener("click", () => {
 });
 
 button.addEventListener("click", () => {
-    console.log(compound);
     if (yearly === false && monthly === false) {
         yearly = true;
     } else if (startingAmount.value === "" || annualAmount.value === "" || rate.value === "" || years.value === "" ) {
