@@ -33,7 +33,7 @@ button.addEventListener("click", () => {
     } else if (startingAmount.value === "" || annualAmount.value === "" || rate.value === "" || years.value === "" ) {
         alert("Please fill in all fields");
         return;
-    } else {
+    } else if (yearly) {
         let result = parseFloat(startingAmount.value);
         let annualAddtion = parseFloat(annualAmount.value);
         let ratePercent = parseFloat(rate.value) / 100;
@@ -43,4 +43,19 @@ button.addEventListener("click", () => {
         };
 
         resultAmount.innerText = `Total: R ${result.toFixed(2)}`;
-}})});
+    } else if (monthly) {
+        let result = parseFloat(startingAmount.value);
+        let monthlyAddition = parseFloat(annualAmount.value) / 12;
+        let annualRate = parseFloat(rate.value) / 100;
+        let yearsNum = parseInt(years.value);
+        let months = yearsNum * 12;
+        let monthlyRate = annualRate / 12;
+
+        for (let i = 1; i <= months; i++) {
+            result += monthlyAddition * Math.pow((1 + monthlyRate), (months - i));
+        }
+
+        resultAmount.innerText = `Total: R ${result.toFixed(2)}`;
+    }
+        
+})});
