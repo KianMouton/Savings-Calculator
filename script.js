@@ -56,6 +56,6 @@ button.addEventListener("click", () => {
         }
 
         resultAmount.innerText = `Total: R ${result.toFixed(2)}`;
-    }
-        
+    };
+
 })});
