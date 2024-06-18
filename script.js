@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const startingAmount = document.getElementById("amount");
+const startingAmount = document.getElementById("amount");
 const annualAmount = document.getElementById("annual-amount");
 const rate = document.getElementById("rate");
 const years = document.getElementById("years");
@@ -49,17 +49,19 @@ button.addEventListener("click", () => {
         alert("Please fill in all fields");
         return;
     } else if (compound) {
-        console.log("compounding brev");
-        let result = 0;
-        for (let i = 0; i < years; i++) {
-            result = result + annualAmount.value * (rate.value / 100);
-            console.log(result);
+        let result = parseFloat(startingAmount.value);
+        let annualAddtion = parseFloat(annualAmount.value);
+        let ratePercent = parseFloat(rate.value) / 100;
+
+        for (let i = 0; i < years.value; i++) {
+            result = result * (1 + ratePercent) + annualAddtion;
         };
-        result += parseFloat(startingAmount.value);
-        resultAmount.innerText = `Total: R ${result}`;
+
+        resultAmount.innerText = `Total: R ${result.toFixed(2)}`;
+        ;
     } else {
         const result = annualAmount.value * (rate.value / 100) * years.value + parseFloat(startingAmount.value);
-        resultAmount.innerText = `Total: R ${result}`;             
+        resultAmount.innerText = `Total: R ${result.toFixed(2)}`;             
     };
 });
 });
